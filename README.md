@@ -26,6 +26,8 @@
 
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
 
+#### [수정사항1] 자전거 대여 시 이용권 차감(ticket → updateTicket)
+![image](https://user-images.githubusercontent.com/61194075/122364665-eb04c580-cf94-11eb-991e-10a08f2a36cf.png)
 
 ### 분석/설계
 
