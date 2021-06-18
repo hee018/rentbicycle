@@ -26,8 +26,15 @@
 
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
 
-#### [수정사항1] 자전거 대여 시 이용권 차감(ticket → updateTicket)
+#### [수정사항 1] 자전거 대여 시 이용권 차감(ticket → updateTicket)
 ![image](https://user-images.githubusercontent.com/61194075/122364665-eb04c580-cf94-11eb-991e-10a08f2a36cf.png)
+
+#### [ISSUE 1] 이용권은 다건을 만들어서 관리하려 했으나 ticket Aggregate에서 수량관리를 할 수 없는 구조
+![image](https://user-images.githubusercontent.com/61194075/122494190-de7b7e00-d023-11eb-98d3-9f634f43bb81.png)
+
+#### [수정사항 2] 1개의 이용권을 구매해서 대여까지 할 수 있도록 구조변경
+#### - 이용권의 상태만 변경하면 되므로 confirmTicket, confirmCancelTicket은 updateTicket과 동일한 기능이므로 병합
+![image](https://user-images.githubusercontent.com/61194075/122495371-dcfe8580-d024-11eb-863e-77f6b84333f6.png)
 
 ### 분석/설계
 
