@@ -83,7 +83,7 @@
 
 #### 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 #### - 기능적 요구사항 검증
-![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
+![2-1](https://user-images.githubusercontent.com/61194075/122499564-18e91900-d02c-11eb-83ba-0fcf56c2bf4c.PNG)
      
      [빨간라인]
      1. 고객이 이용권을 선택하여 구매한다.(60분 1000원, 120분 2000원) → OK
@@ -95,8 +95,8 @@
      [초록라인]
      4. 고객은 구매한 이용권을 사용하여 대여가능 상태의 자전거를 대여한다. → 이용권에 대한 차감이 되지 않음(오류 발견)     
 
-##### [수정사항 1] 자전거 대여 시 이용권 차감(ticket → updateTicket) 처리 및 재검증
-![image](https://user-images.githubusercontent.com/61194075/122364665-eb04c580-cf94-11eb-991e-10a08f2a36cf.png)
+##### [수정사항 1] 자전거 대여 시 이용권 차감(ticket → updateTicket) 처리 및 재검증!
+[3-2](https://user-images.githubusercontent.com/61194075/122499588-20a8bd80-d02c-11eb-8bf3-faba08179a7d.PNG)
 
      [초록라인]
      4. 고객은 구매한 이용권을 사용하여 대여가능 상태의 자전거를 대여한다. → 이용권 차감처리 → OK
@@ -104,7 +104,8 @@
      [빨간라인]
      6. 자전거를 대여한 고객은 자전거 반납이 가능하다. → OK
      7. 자전거 반납시 고객에게 반납 안내 알림을 전송한다. → OK
-     
+     ![2-1](https://user-images.githubusercontent.com/61194075/122499552-15ee2880-d02c-11eb-93df-26023e7ca040.PNG)
+
      [파란라인] 
      8. 자전거 반납후 기본 대여시간 초과 하여 추가요금 발생시 결제 알림을 전송한다. → OK
      
