@@ -32,8 +32,6 @@ public class Bicycle {
         // 이벤트 발생 --> 자전거렌트 RegisterBicycle
         // 등록 / 반납 상태의 유휴 자전거만 렌트 가능
         if( this.getBicycleStatus().equals("Registerd") || this.getBicycleStatus().equals("Returned") ) {
-            
-
             boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
                 .chkTicketStatus(this.getTicketId(), this.getUsingTime());
 
