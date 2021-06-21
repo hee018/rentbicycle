@@ -23,7 +23,7 @@ phases:
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo start command
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - cd tikcet
+      - cd ticket
       - echo $PWD
   build:
     commands:
