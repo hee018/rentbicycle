@@ -85,7 +85,7 @@
 # 분석/설계
 
 ## 
-![image](https://user-images.githubusercontent.com/84304021/122719255-e9931000-d2a8-11eb-96b2-db0fc0083a53.png)
+![image](https://user-images.githubusercontent.com/84304021/122719255-e9931000-d2a8-11eb-96b2-db0fc0083a53.png){: width="70%" height="70%"}
 
 ##
 ![image](https://user-images.githubusercontent.com/84304021/122719352-07f90b80-d2a9-11eb-9c7f-3816fa32bfff.png)
