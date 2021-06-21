@@ -34,9 +34,9 @@ public class Bicycle {
 
             // rentbicycle.external.Ticket ticket = new rentbicycle.external.Ticket();
             // mappings goes here
-            //boolean rslt = true;
-            boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
-                .chkTicketStatus(this.getTicketId());
+            boolean rslt = true;
+            //boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
+            //    .chkTicketStatus(this.getTicketId());
 
             if (rslt) {
                 BicycleRented bicycleRented = new BicycleRented();
