@@ -186,22 +186,19 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 
 ```
 SA 생성
-kubectl apply -f eks-admin-service-account.yml
 ```
-![image](https://user-images.githubusercontent.com/61194075/122771612-8f627100-d2e1-11eb-84c3-8cbd85ae28af.png)
+![7](https://user-images.githubusercontent.com/61194075/122781158-80cc8780-d2ea-11eb-89f3-2db33dbcff53.PNG)
 
 ```
 Role 생성
-kubectl apply -f eks-admin-cluster-role-binding.yml
 ```
-![image](https://user-images.githubusercontent.com/61194075/122774232-fa14ac00-d2e3-11eb-9a34-e1c373e9e1fd.png)
+![8](https://user-images.githubusercontent.com/61194075/122781199-8aee8600-d2ea-11eb-95fb-1894547a2943.PNG)
 
 ```
 Token 확인
 kubectl -n kube-system get secret
-kubectl -n kube-system describe secret eks-admin-token-rjpmq
 ```
-
+![9](https://user-images.githubusercontent.com/61194075/122781247-9477ee00-d2ea-11eb-8ec1-471858998d9a.PNG)
 
 ```
 buildspec.yml 파일 
