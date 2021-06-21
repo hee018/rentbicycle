@@ -18,36 +18,45 @@ public class Bicycle {
 
     @PostPersist
     public void onPostPersist(){
-        BicycleRented bicycleRented = new BicycleRented();
-        BeanUtils.copyProperties(this, bicycleRented);
-        bicycleRented.publishAfterCommit();
+
+            BicycleRegistered bicycleRegistered = new BicycleRegistered();
+            BeanUtils.copyProperties(this, bicycleRegistered);
+            bicycleRegistered.publishAfterCommit();
+
+    }
+
+    @PostUpdate
+    public void onPostUpdate(){
 
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
-        rentbicycle.external.Ticket ticket = new rentbicycle.external.Ticket();
+        // rentbicycle.external.Ticket ticket = new rentbicycle.external.Ticket();
         // mappings goes here
-        Application.applicationContext.getBean(rentbicycle.external.TicketService.class)
-            .chkTicketStatus(ticket);
+        boolean rslt = true;
+        //boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
+        //    .chkTicketStatus(this.getTicketId());
+
+        if (rslt) {
+            BicycleRented bicycleRented = new BicycleRented();
+            BeanUtils.copyProperties(this, bicycleRented);
+            bicycleRented.publishAfterCommit();
+        }
 
 
         BicycleReturned bicycleReturned = new BicycleReturned();
         BeanUtils.copyProperties(this, bicycleReturned);
         bicycleReturned.publishAfterCommit();
+    }
 
-
-        BicycleRegistered bicycleRegistered = new BicycleRegistered();
-        BeanUtils.copyProperties(this, bicycleRegistered);
-        bicycleRegistered.publishAfterCommit();
-
+    @PreRemove
+    public void onPreRemove(){
 
         BicycleDeleted bicycleDeleted = new BicycleDeleted();
         BeanUtils.copyProperties(this, bicycleDeleted);
         bicycleDeleted.publishAfterCommit();
 
-
     }
-
 
     public Long getBicycleId() {
         return bicycleId;
