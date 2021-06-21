@@ -196,6 +196,12 @@ kubectl apply -f eks-admin-cluster-role-binding.yml
 ```
 ![image](https://user-images.githubusercontent.com/61194075/122774232-fa14ac00-d2e3-11eb-9a34-e1c373e9e1fd.png)
 
+```
+Token 확인
+kubectl -n kube-system get secret
+kubectl -n kube-system describe secret eks-admin-token-rjpmq
+```
+
 
 ```
 buildspec.yml 파일 
