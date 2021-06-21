@@ -204,7 +204,7 @@ kubectl -n kube-system get secret
 buildspec.yml 파일 
 마이크로 서비스 room의 yml 파일 이용하도록 세팅
 ```
-![image](https://user-images.githubusercontent.com/61194075/122768726-d8fd8c80-d2de-11eb-9283-05549ea8c1f8.png)
+![10](https://user-images.githubusercontent.com/61194075/122781658-03554700-d2eb-11eb-8c76-19110cb0bcd7.PNG)
 
 - codebuild 실행
 ```
