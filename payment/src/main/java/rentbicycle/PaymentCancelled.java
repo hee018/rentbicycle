@@ -2,6 +2,9 @@
 package rentbicycle;
 
 public class PaymentCancelled extends AbstractEvent {
+// event (주황색)
+// Aggregate 의 변화에 의해서 발생하기 때문에, 이벤트를 보내는 로직은 Entity의 lifecycle 에 작성
+//메시지 브로커를 kafka 를 사용한다면 topic 을 설정하고, 마지막에 send 하는 형식으로 이벤트를 발행
 
     private Long paymentId;
     private Long ticketId;
