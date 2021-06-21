@@ -19,24 +19,23 @@ public class Bicycle {
     @PostPersist
     public void onPostPersist(){
 
-            BicycleRegistered bicycleRegistered = new BicycleRegistered();
-            BeanUtils.copyProperties(this, bicycleRegistered);
-            bicycleRegistered.publishAfterCommit();
+        // 이벤트 발생 --> 자전거등록 RegisterBicycle
+        BicycleRegistered bicycleRegistered = new BicycleRegistered();
+        BeanUtils.copyProperties(this, bicycleRegistered);
+        bicycleRegistered.publishAfterCommit();
 
     }
 
     @PostUpdate
     public void onPostUpdate(){
 
+        // 이벤트 발생 --> 자전거렌트 RegisterBicycle
+        // 등록 / 반납 상태의 유휴 자전거만 렌트 가능
         if( this.getBicycleStatus().equals("Registerd") || this.getBicycleStatus().equals("Returned") ) {
-            //Following code causes dependency to external APIs
-            // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
+            
 
-            // rentbicycle.external.Ticket ticket = new rentbicycle.external.Ticket();
-            // mappings goes here
-            boolean rslt = true;
-            //boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
-            //    .chkTicketStatus(this.getTicketId());
+            boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
+                .chkTicketStatus(this.getTicketId(), this.getUsingTime());
 
             if (rslt) {
                 BicycleRented bicycleRented = new BicycleRented();
@@ -45,6 +44,8 @@ public class Bicycle {
             }
         }
 
+        // 이벤트 발생 --> 자전거반납 ReturnBicycle
+        // 렌트 상태의 자전거만 반납 가능
         if( this.getBicycleStatus().equals("Rented") ) {
             BicycleReturned bicycleReturned = new BicycleReturned();
             BeanUtils.copyProperties(this, bicycleReturned);
@@ -55,10 +56,10 @@ public class Bicycle {
     @PreRemove
     public void onPreRemove(){
 
-        // 렌트중인 자전거는 삭제 불가함
+        // 이벤트 발생 --> 자전거삭제 DeleteBicycle
+        // 렌트 상태의 자전거는 삭제 불가 
         if ( !this.getBicycleStatus().equals("Rented") )
         {
-            // 이벤트 발생 > BicycleDeleted
             BicycleDeleted bicycleDeleted = new BicycleDeleted();
             BeanUtils.copyProperties(this, bicycleDeleted);
             bicycleDeleted.publishAfterCommit();
