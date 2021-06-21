@@ -14,9 +14,9 @@ public class PaymentApproved extends AbstractEvent {
     private Boolean addPaymentYN;
     private String paymentStatus;
 
-    public PaymentApproved(){
+    // public PaymentApproved(){
     //         this.paymentStatus = this.getClass().getSimpleName();
-    }
+    // }
 
 
     public Long getPaymentId() {

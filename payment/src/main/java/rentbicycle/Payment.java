@@ -33,12 +33,16 @@ public class Payment {
         // BeanUtils.copyProperties(this, paymentApproved);
         // paymentApproved.publishAfterCommit();
 
+        // boolean rslt =  PaymentApplication.applicationContext.getBean(rentbicycle.external.PaymentService.class)
+        // .modifyStock(this.getPaymentId(), this.getTicketAmt());
+
+
         PaymentApproved paymentApproved = new PaymentApproved();
         paymentApproved.setPaymentId(this.getPaymentId());
         paymentApproved.setPaymentId(this.getTicketId());
         paymentApproved.setTicketAmt(this.getTicketAmt());
         paymentApproved.setAddPaymentYn(this.getAddPaymentYn());
-        paymentApproved.setPaymentStatus("ticketPurchased");
+        paymentApproved.setPaymentStatus("paymentApproved");
 
         ObjectMapper objectMapper = new ObjectMapper();
         String json = null;
@@ -52,17 +56,37 @@ public class Payment {
         System.out.println(json);
 
 
-        Processor processor = PaymentApplication.applicationContext.getBean(Processor.class);
-        MessageChannel outputChannel = processor.output();
+        // Processor processor = PaymentApplication.applicationContext.getBean(Processor.class);
+        // MessageChannel outputChannel = processor.output();
 
-        outputChannel.send(MessageBuilder
-        .withPayload(json)
-        .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
-        .build());
+        // outputChannel.send(MessageBuilder
+        // .withPayload(json)
+        // .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
+        // .build());
+        
+        BeanUtils.copyProperties(this, paymentApproved);
+        paymentApproved.publishAfterCommit();
 
 
 
-        PaymentCancelled paymentCancelled = new PaymentCancelled();
+        PaymentCancelled paymentCancelled = new PaymentCancelled();        
+        paymentCancelled.setPaymentId(this.getPaymentId());
+        paymentCancelled.setPaymentId(this.getTicketId());
+        paymentCancelled.setTicketAmt(this.getTicketAmt());
+        paymentCancelled.setAddPaymentYn(this.getAddPaymentYn());
+        paymentCancelled.setPaymentStatus("paymentCancelled");
+
+        objectMapper = new ObjectMapper();
+        json = null;
+
+        try {
+            json = objectMapper.writeValueAsString(paymentApproved);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("JSON format exception", e);
+        }
+        System.out.println("================paymentCancelled========================");
+        System.out.println(json);
+
         BeanUtils.copyProperties(this, paymentCancelled);
         paymentCancelled.publishAfterCommit();
 
