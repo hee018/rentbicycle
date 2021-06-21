@@ -95,8 +95,21 @@
 #### MSAEz 로 모델링한 이벤트스토밍 결과:
 http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281fbf85e19d33157d892
 
-#### 이벤트스토밍 - Event
+#### Event
 ![image](https://user-images.githubusercontent.com/84304021/122719840-b4d38880-d2a9-11eb-8168-93e454a0d896.png)
+
+#### 비적격 이벤트 제거
+![image](https://user-images.githubusercontent.com/84304021/122719995-e187a000-d2a9-11eb-81b2-8559fd0fcf8e.png)
+
+#### Actor, Command
+![image](https://user-images.githubusercontent.com/84304021/122720056-f2d0ac80-d2a9-11eb-95f1-4247caaf9d3e.png)
+
+#### Aggregate
+![image](https://user-images.githubusercontent.com/84304021/122720147-0e3bb780-d2aa-11eb-94d6-3adf9b642202.png)
+
+#### Bounded Context
+![image](https://user-images.githubusercontent.com/84304021/122720201-20b5f100-d2aa-11eb-961c-107936065980.png)
+
 
 #### 완성된 모형
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
