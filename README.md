@@ -162,55 +162,12 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 
     3. 고객이 자전거 대여 잔여 시간을 수시로 확인하도록 View Table 을 구성 (CQRS) (성능)
 
-
-
 *****
-
-![2-1](https://user-images.githubusercontent.com/61194075/122499564-18e91900-d02c-11eb-83ba-0fcf56c2bf4c.PNG)
-     
-     [빨간라인]
-     1. 고객이 이용권을 선택하여 구매한다.(60분 1000원, 120분 2000원) → OK
-     2. 고객이 결제한다. → OK
-     
-     [파란라인] 
-     3. 고객은 이용권을 취소할 수 있다. → OK
-     
-     [초록라인]
-     4. 고객은 구매한 이용권을 사용하여 대여가능 상태의 자전거를 대여한다. → 이용권에 대한 차감이 되지 않음(오류 발견)     
-
-
-##### [수정사항 1] 자전거 대여 시 이용권 차감(ticket → updateTicket) 처리 및 재검증!
-![3-2](https://user-images.githubusercontent.com/61194075/122499588-20a8bd80-d02c-11eb-8bf3-faba08179a7d.PNG)
-
-     [초록라인]
-     4. 고객은 구매한 이용권을 사용하여 대여가능 상태의 자전거를 대여한다. → 이용권 차감처리 → OK
-     
-     [빨간라인]
-     6. 자전거를 대여한 고객은 자전거 반납이 가능하다. → OK
-     7. 자전거 반납시 고객에게 반납 안내 알림을 전송한다. → OK
-     ![2-1](https://user-images.githubusercontent.com/61194075/122499552-15ee2880-d02c-11eb-93df-26023e7ca040.PNG)
-
-     [파란라인] 
-     8. 자전거 반납후 기본 대여시간 초과 하여 추가요금 발생시 결제 알림을 전송한다. → OK
-     
-     [노란라인]
-     9. 관리자는 자전거를 등록, 삭제할 수 있다. → OK
-
-#### - 비기능적 요구사항 검증
-[ISSUE 1] 이용권은 다건을 만들어서 관리하려 했으나 ticket Aggregate에서 수량관리를 할 수 없는 구조이므로 변경필요
-![image](https://user-images.githubusercontent.com/61194075/122494190-de7b7e00-d023-11eb-98d3-9f634f43bb81.png)
-
-##### [수정사항 2] 1개의 이용권을 구매해서 대여까지 할 수 있도록 구조변경
-- 이용권의 상태만 변경하면 되므로 confirmTicket, confirmCancelTicket은 updateTicket과 동일한 기능이므로 병합
-![image](https://user-images.githubusercontent.com/61194075/122495489-1a631300-d025-11eb-8b5b-1eebb709d2a1.png)
-
-
-
-
-
 ### 구현
 
-*****
+분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 스프링부트로 구현하였다. 
+구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 808n 이다)
+
 
 
 
