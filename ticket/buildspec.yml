@@ -63,7 +63,6 @@ phases:
           kind: Deployment
           metadata:
             name: $_PROJECT_NAME
-            namespace: rentbicycle
             labels:
               app: $_PROJECT_NAME
           spec:
