@@ -46,7 +46,7 @@ phases:
           kind: Service
           metadata:
             name: $_PROJECT_NAME
-            namespace: flowerdelivery
+            namespace: rentbicycle
             labels:
               app: $_PROJECT_NAME
           spec:
@@ -62,7 +62,7 @@ phases:
           kind: Deployment
           metadata:
             name: $_PROJECT_NAME
-            namespace: flowerdelivery
+            namespace: rentbicycle
             labels:
               app: $_PROJECT_NAME
           spec:
@@ -82,7 +82,7 @@ phases:
                       - containerPort: 8080
                     readinessProbe:
                       httpGet:
-                        path: '/ordermanagements'
+                        path: '/bicycles'
                         port: 8080
                       initialDelaySeconds: 10
                       timeoutSeconds: 2
@@ -90,7 +90,7 @@ phases:
                       failureThreshold: 10
                     livenessProbe:
                       httpGet:
-                        path: '/ordermanagements'
+                        path: '/bicycles'
                         port: 8080
                       initialDelaySeconds: 120
                       timeoutSeconds: 2
