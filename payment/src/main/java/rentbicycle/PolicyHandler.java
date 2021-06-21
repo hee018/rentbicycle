@@ -18,6 +18,8 @@ public class PolicyHandler{
         if(!ticketRefunded.validate()) return;
 
         System.out.println("\n\n##### listener CancelPayment : " + ticketRefunded.toJson() + "\n\n");
+        
+        System.out.println("\n\n##### ");
 
         // Sample Logic //
         Payment payment = new Payment();
