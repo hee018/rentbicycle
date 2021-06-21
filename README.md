@@ -82,7 +82,7 @@
     - Contract Test :  자동화된 경계 테스트를 통하여 구현 오류나 API 계약위반를 미리 차단 가능한가?
 *****
 
-### 분석/설계
+## 분석/설계
 
 ### 
 ![image](https://user-images.githubusercontent.com/84304021/122719255-e9931000-d2a8-11eb-96b2-db0fc0083a53.png)
@@ -90,10 +90,13 @@
 ###
 ![image](https://user-images.githubusercontent.com/84304021/122719352-07f90b80-d2a9-11eb-9c7f-3816fa32bfff.png)
 
-#### Event Storming 결과
+### Event Storming 결과
 
-MSAEz 로 모델링한 이벤트스토밍 결과:
+#### MSAEz 로 모델링한 이벤트스토밍 결과:
 http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281fbf85e19d33157d892
+
+#### 이벤트스토밍 - Event
+![image](https://user-images.githubusercontent.com/84304021/122719840-b4d38880-d2a9-11eb-8168-93e454a0d896.png)
 
 #### 완성된 모형
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
