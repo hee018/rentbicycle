@@ -120,7 +120,7 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 ![image](https://user-images.githubusercontent.com/84304021/122720538-90c47700-d2aa-11eb-9792-b7ba12a72848.png)
 
 
-#### 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
+### 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 #### - 기능적 요구사항 검증
 ![image](https://user-images.githubusercontent.com/84304021/122721541-c322a400-d2ab-11eb-9c54-eaf10d159413.png)
      
@@ -146,6 +146,20 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
      [빨간라인]
      4. 자전거 대여시 고객에게 자전거 대여 알림을 전송한다 : OK
 
+#### - 비기능적 요구사항 검증
+![image](https://user-images.githubusercontent.com/84304021/122722168-5e1b7e00-d2ac-11eb-86c1-0d0fd8f7e5ed.png)
+
+     1. 티켓구매는 결제가 처리되어야만 이용권 사용이 가능하고, 장애격리를 위해 CB를 설치함 (트랜잭션, 장애격리)
+
+     2. 결제 승인 이벤트를 수신하여 자전거 대여 정보 변경을 수행함 (장애전파) -> 오류발견
+
+     3. 고객이 자전거 대여 잔여 시간을 수시로 확인하도록 View Table 을 구성 (CQRS) (성능)
+
+
+
+
+*****
+
 ![2-1](https://user-images.githubusercontent.com/61194075/122499564-18e91900-d02c-11eb-83ba-0fcf56c2bf4c.PNG)
      
      [빨간라인]
@@ -157,6 +171,7 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
      
      [초록라인]
      4. 고객은 구매한 이용권을 사용하여 대여가능 상태의 자전거를 대여한다. → 이용권에 대한 차감이 되지 않음(오류 발견)     
+
 
 ##### [수정사항 1] 자전거 대여 시 이용권 차감(ticket → updateTicket) 처리 및 재검증!
 ![3-2](https://user-images.githubusercontent.com/61194075/122499588-20a8bd80-d02c-11eb-8bf3-faba08179a7d.PNG)
