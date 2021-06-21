@@ -1,0 +1,12 @@
+rentbicycle\PolicyHandler.class
+rentbicycle\BicycleRegistered.class
+rentbicycle\AbstractEvent.class
+rentbicycle\BicycleApplication.class
+rentbicycle\BicycleRented.class
+rentbicycle\AbstractEvent$1.class
+rentbicycle\BicycleRepository.class
+rentbicycle\BicycleReturned.class
+rentbicycle\config\kafka\KafkaProcessor.class
+rentbicycle\BicycleController.class
+rentbicycle\BicycleDeleted.class
+rentbicycle\Bicycle.class
