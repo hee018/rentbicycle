@@ -92,6 +92,9 @@
 
 #### Event Storming 결과
 
+MSAEz 로 모델링한 이벤트스토밍 결과:
+http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281fbf85e19d33157d892
+
 #### 완성된 모형
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
 
