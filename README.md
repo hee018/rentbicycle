@@ -175,8 +175,25 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 
 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8081 ~ 808n 이다)
 
+*****
+# 운영
 
+## CI/CD 설정
 
+각 구현체들은 각자의 source repository 에 구성되었고, 사용한 CI/CD는 buildspec.yml을 이용한 AWS codebuild를 사용하였습니다.
 
+- CodeBuild 프로젝트를 생성하고 AWS_ACCOUNT_ID, KUBE_URL, KUBE_TOKEN 환경 변수 세팅을 한다
+```
+buildspec.yml 파일 
+마이크로 서비스 room의 yml 파일 이용하도록 세팅
+```
+![image](https://user-images.githubusercontent.com/61194075/122768726-d8fd8c80-d2de-11eb-9283-05549ea8c1f8.png)
 
+- codebuild 실행
+```
+codebuild 프로젝트 및 빌드 이력
+```
+![image](https://user-images.githubusercontent.com/61194075/122769143-41e50480-d2df-11eb-9f51-ec33ba88613d.png)
+
+![image](https://user-images.githubusercontent.com/61194075/122769003-224ddc00-d2df-11eb-9f19-2bf16ca3f5b4.png)
 
