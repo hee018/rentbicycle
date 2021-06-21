@@ -183,6 +183,20 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 각 구현체들은 각자의 source repository 에 구성되었고, 사용한 CI/CD는 buildspec.yml을 이용한 AWS codebuild를 사용하였습니다.
 
 - CodeBuild 프로젝트를 생성하고 AWS_ACCOUNT_ID, KUBE_URL, KUBE_TOKEN 환경 변수 세팅을 한다
+
+```
+SA 생성
+kubectl apply -f eks-admin-service-account.yml
+```
+![image](https://user-images.githubusercontent.com/61194075/122771612-8f627100-d2e1-11eb-84c3-8cbd85ae28af.png)
+
+```
+Role 생성
+kubectl apply -f eks-admin-cluster-role-binding.yml
+```
+![image](https://user-images.githubusercontent.com/61194075/122774232-fa14ac00-d2e3-11eb-9a34-e1c373e9e1fd.png)
+
+
 ```
 buildspec.yml 파일 
 마이크로 서비스 room의 yml 파일 이용하도록 세팅
