@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "user03-bicycle"
+    _PROJECT_NAME: "bicycle"
 
 phases:
   install:
