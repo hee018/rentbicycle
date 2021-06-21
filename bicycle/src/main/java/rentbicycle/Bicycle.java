@@ -9,7 +9,7 @@ import java.util.Date;
 @Table(name="Bicycle_table")
 public class Bicycle {
 
-    @Id
+    @Id  
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long bicycleId;
     private String bicycleStatus;
