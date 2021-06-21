@@ -9,7 +9,7 @@ import java.util.Date;
 @Table(name="Payment_table")
 public class Payment {
 
-    @Id
+    @Id   
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long paymentId;
     private Long ticketId;
