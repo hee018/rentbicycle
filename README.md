@@ -78,6 +78,9 @@
 *****
 
 ### 분석/설계
+
+#### Event Storming 결과
+
 #### 완성된 모형
 ![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
 
