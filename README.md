@@ -1,6 +1,6 @@
 # 공유 자전거 플랫폼(따릉이)
 
-### 서비스 시나리오
+## 서비스 시나리오
 
 #### 기능적 요구사항
 1. 고객이 이용권을 선택하여 구매한다. (60분 1000원, 120분 2000원)
@@ -82,37 +82,43 @@
     - Contract Test :  자동화된 경계 테스트를 통하여 구현 오류나 API 계약위반를 미리 차단 가능한가?
 *****
 
-## 분석/설계
+# 분석/설계
 
-### 
+## 
 ![image](https://user-images.githubusercontent.com/84304021/122719255-e9931000-d2a8-11eb-96b2-db0fc0083a53.png)
 
-###
+##
 ![image](https://user-images.githubusercontent.com/84304021/122719352-07f90b80-d2a9-11eb-9c7f-3816fa32bfff.png)
 
-### Event Storming 결과
+## Event Storming 결과
 
-#### MSAEz 로 모델링한 이벤트스토밍 결과:
+### MSAEz 로 모델링한 이벤트스토밍 결과:
 http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281fbf85e19d33157d892
 
-#### Event
+### Event
 ![image](https://user-images.githubusercontent.com/84304021/122719840-b4d38880-d2a9-11eb-8168-93e454a0d896.png)
 
-#### 비적격 이벤트 제거
+### 비적격 이벤트 제거
 ![image](https://user-images.githubusercontent.com/84304021/122719995-e187a000-d2a9-11eb-81b2-8559fd0fcf8e.png)
 
-#### Actor, Command
+### Actor, Command
 ![image](https://user-images.githubusercontent.com/84304021/122720056-f2d0ac80-d2a9-11eb-95f1-4247caaf9d3e.png)
 
-#### Aggregate
+### Aggregate
 ![image](https://user-images.githubusercontent.com/84304021/122720147-0e3bb780-d2aa-11eb-94d6-3adf9b642202.png)
 
-#### Bounded Context
+### Bounded Context
 ![image](https://user-images.githubusercontent.com/84304021/122720201-20b5f100-d2aa-11eb-961c-107936065980.png)
 
+### message기능, Policy 추가
+![image](https://user-images.githubusercontent.com/84304021/122720429-6ffc2180-d2aa-11eb-867e-42cf1b840cc7.png)
 
-#### 완성된 모형
-![image](https://user-images.githubusercontent.com/61194075/122356178-81cd8400-cf8d-11eb-9bc2-3d40f7bcea82.png)
+### Policy이동, 컨텍스트 매핑 
+![image](https://user-images.githubusercontent.com/84304021/122720498-82765b00-d2aa-11eb-9500-27b99c162f6f.png)
+
+### 완성된 모형
+![image](https://user-images.githubusercontent.com/84304021/122720538-90c47700-d2aa-11eb-9792-b7ba12a72848.png)
+
 
 #### 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 #### - 기능적 요구사항 검증
