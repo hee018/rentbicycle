@@ -434,3 +434,14 @@ codebuild 프로젝트 및 빌드 이력
 
 ![image](https://user-images.githubusercontent.com/61194075/122868523-04778a00-d366-11eb-93af-a638a768f4a4.png)
 
+## Zero-downtime deploy(Readiness), Self-healing(Liveness)
+- [Zero-downtime deploy(Readiness)]
+- 컨테이너의 상태 체크중에 liveness의 경우에는 컨테이너가 비정상적으로 작동이 불가능한 경우도 있지만 일시적으로 서비스가 불가능한 상태가 될 수 있음
+  이런 경우 컨테이너를 일시적으로 서비스가 불가능한 상태로 마킹하는 기능 → 즉, 서비스 목록에서 제외시킴
+  pod를 재시작하지 않음
+  
+- [Self-healing(Liveness)]
+- 컨테이너의 상태를 주기적으로 체크해서 응답이 없으면 자동 재시작함. pod를 재시작함
+
+- 실제 yml 파일에 설정은 완료 했으나 설정에 대한 테스트는 
+![image](https://user-images.githubusercontent.com/61194075/122870330-7cdf4a80-d368-11eb-9cbb-381a298875ab.png)
