@@ -367,5 +367,6 @@ codebuild 프로젝트 및 빌드 이력
 ![image](https://user-images.githubusercontent.com/61194075/122858111-b017de80-d354-11eb-88bd-2c8249d7d7c2.png)
 
 - 피호출 서비스 부하처리 : Payment.java
+  Thread.currentThread().sleep((long) (400 + Math.random() * 220));
 ![image](https://user-images.githubusercontent.com/61194075/122860035-f28eea80-d357-11eb-8f2f-f1a8f8c850a6.png)
 
