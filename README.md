@@ -194,6 +194,26 @@ mvn spring-boot:run
 cd message
 mvn spring-boot:run
 ```
+## 동기식 호출 과 Fallback 처리
+분석단계에서의 조건 중 하나로 ticket->payment 간의 호출은 동기식 일관성을 유지하는 트랜잭션으로 처리하기로 하였다. 
+호출 프로토콜은 이미 앞서 Rest Repository 에 의해 노출되어있는 REST 서비스를 FeignClient 를 이용하여 호출하도록 한다.
+
+결제서비스를 호출하기 위하여 FeignClient 를 이용하여 Service 대행 인터페이스 구현
+
+```
+# PaymentService.java
+
+import org.springframework.cloud.openfeign.FeignClient;
+....
+@FeignClient(name="payment", url="http://localhost:8082")
+public interface PaymentService {
+
+    @RequestMapping(method= RequestMethod.GET, path="/payTicket")
+    public boolean payTicket(@RequestParam("ticketId") Long ticketId, 
+                             @RequestParam("ticketAmt") Long ticketAmt);
+
+}
+```
 *****
 # 운영
 
