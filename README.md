@@ -292,7 +292,20 @@ public class Ticket {
 public interface TicketRepository extends PagingAndSortingRepository<Ticket, Long>{
 }
 ```
+- 적용 후 REST API 의 테스트
+```
+1. 티켓 구매
+http http://localhost:8081/tickets ticketType=1 ticketStatus="ReadyForPay"
 
+2. 자전거 등록
+http http://localhost:8083/bicycles bicycleStatus="Registered"
+
+3. 자전거 렌탈(bicycleId가 1이라고 가정)
+http PATCH http://localhost:8083/bicycles/1 ticketId=1 usingTime=60
+
+4. 티켓 상태 확인(ticketStatus가 ticketUsed로 변경되었는지 확인)
+http GET http://localhost:8081/tickets/1
+```
 
 *****
 # 운영
