@@ -348,7 +348,7 @@ codebuild 프로젝트 및 빌드 이력
 
 ## 서킷브레이킹
 서킷 브레이킹 : Spring FeignClient + Hystrix 옵션
-시나리오는 ticket → payment가 RESTful Request/Response 로 연동하여 구현이 되어있고, 요청이 과도할 경우 CB 를 통하여 장애격리.
+- 시나리오는 ticket → payment가 RESTful Request/Response 로 연동하여 구현이 되어있고, 요청이 과도할 경우 CB 를 통하여 장애격리.
 
 - Hystrix 설정: thread에서 600 밀리가 넘어서 유지되면 CB 회로가 닫히도록 (요청을 빠르게 실패처리, 차단) 설정
 ![image](https://user-images.githubusercontent.com/61194075/122858111-b017de80-d354-11eb-88bd-2c8249d7d7c2.png)
