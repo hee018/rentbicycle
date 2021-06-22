@@ -393,6 +393,11 @@ kubectl -n kube-system get secret
 ![9](https://user-images.githubusercontent.com/61194075/122781247-9477ee00-d2ea-11eb-8ec1-471858998d9a.PNG)
 
 ```
+KUBE_URL 확인
+```
+![image](https://user-images.githubusercontent.com/61194075/122873743-1ad51400-d36d-11eb-9ba2-37470aba1641.png)
+
+```
 buildspec.yml 파일 
 마이크로 서비스 room의 yml 파일 이용하도록 세팅
 ```
@@ -402,6 +407,7 @@ buildspec.yml 파일
 ```
 codebuild 프로젝트 및 빌드 이력
 ```
+![image](https://user-images.githubusercontent.com/61194075/122874002-74d5d980-d36d-11eb-8904-e70badf32920.png)
 ![image](https://user-images.githubusercontent.com/61194075/122769143-41e50480-d2df-11eb-9f51-ec33ba88613d.png)
 
 ![image](https://user-images.githubusercontent.com/61194075/122769003-224ddc00-d2df-11eb-9f19-2bf16ca3f5b4.png)
