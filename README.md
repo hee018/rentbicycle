@@ -214,7 +214,27 @@ public interface PaymentService {
 
 }
 ```
-. 주문을 받은 직후(@PostPersist) 결제를 요청하도록 처리
+- ticket 구매 직후 (@PostPersist) 결제를 요청하도록 처리
+```
+    @PostPersist
+    public void onPostPersist(){
+        Long ticketAmount = Long.decode(this.getTicketType() == "1"?"1000":"2000");
+
+        boolean result = TicketApplication.applicationContext.getBean(rentbicycle.external.PaymentService.class)
+            .payTicket(this.getTicketId(), ticketAmount);
+        
+        if(result) {
+            TicketPurchased ticketPurchased = new TicketPurchased();
+            ticketPurchased.setTicketId(this.getTicketId());
+            ticketPurchased.setTicketStatus("ticketPurchased");
+            ticketPurchased.setTicketType(this.getTicketType());
+            ticketPurchased.setBuyerPhoneNum(this.getBuyerPhoneNum());
+
+            BeanUtils.copyProperties(this, ticketPurchased);
+            ticketPurchased.publishAfterCommit();
+        }
+    }
+```
 
 *****
 # 운영
