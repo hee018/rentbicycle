@@ -444,4 +444,6 @@ codebuild 프로젝트 및 빌드 이력
   컨테이너의 상태를 주기적으로 체크해서 응답이 없으면 자동 재시작함. pod를 재시작함
 
 - 실제 yml 파일에 설정은 완료 했으나 설정에 대한 테스트는 
-![image](https://user-images.githubusercontent.com/61194075/122870330-7cdf4a80-d368-11eb-9cbb-381a298875ab.png)
+
+![image](https://user-images.githubusercontent.com/61194075/122870826-21fa2300-d369-11eb-9726-1eb008f68418.png)
+
