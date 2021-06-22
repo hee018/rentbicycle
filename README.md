@@ -216,6 +216,8 @@ public interface PaymentService {
 ```
 - ticket 구매 직후 (@PostPersist) 결제를 요청하도록 처리
 ```
+# ticket.java
+
     @PostPersist
     public void onPostPersist(){
         Long ticketAmount = Long.decode(this.getTicketType() == "1"?"1000":"2000");
