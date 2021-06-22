@@ -168,6 +168,9 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 
 ![image](https://user-images.githubusercontent.com/84304021/122846201-4ee61000-d340-11eb-88a8-4f09c439b1b8.png)
 
+- Chris Richardson, MSA Patterns 참고하여 Inbound adaptor와 Outbound adaptor를 구분함
+- 호출관계에서 PubSub 과 Req/Resp 를 구분함
+- 서브 도메인과 바운디드 컨텍스트의 분리:  각 팀의 KPI 별로 아래와 같이 관심 구현 스토리를 나눠가짐
 
 *****
 # 구현
