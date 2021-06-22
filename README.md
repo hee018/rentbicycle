@@ -331,6 +331,42 @@ http GET http://localhost:8081/tickets/1
 - 티켓환불
 ![티켓환불](https://user-images.githubusercontent.com/83382676/122861054-bfe5f180-d359-11eb-8579-25bab69632b0.png)
 
+## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
+- 자전거 렌트 후에 티켓 상태가 업데이트 되고, 자전거 렌트 메시지가 전송되는 시스템과의 통신 행위는 비동기식으로 처리한다. (단, 자전거 렌트시 티켓 유효성 체크는 동기식 으로 체크 함)
+```
+@PostUpdate
+public void onPostUpdate(){
+
+	
+	// 등록 / 반납 상태의 유휴 자전거만 렌트 가능
+	if( this.getBicycleStatus().equals("Registered") || this.getBicycleStatus().equals("Returned") ) {
+		boolean rslt = BicycleApplication.applicationContext.getBean(rentbicycle.external.TicketService.class)
+			.chkTicketStatus(this.getTicketId(), this.getUsingTime());
+
+		if (rslt) {
+			// 이벤트 발생 / 메시지 전송 --> 자전거렌트 RegisterBicycle
+			BicycleRented bicycleRented = new BicycleRented();
+			BeanUtils.copyProperties(this, bicycleRented);
+			bicycleRented.publishAfterCommit();
+		}
+	}
+```
+
+- 메시지 서비스는 티켓,자전거 서비스와 완전히 분리되어, 이벤트 수신에 따라 처리되기 때문에, 메시지 서비스가 유지보수로 인해 잠시 내려간 상태 라도 티켓구매,렌트 기능은 문제 없다.
+```
+# message 서비스 다운
+
+# 티켓구매 요청
+http http://localhost:8081/tickets ticketType=1 ticketStatus="ReadyForPay"   #Success
+
+# 자전거렌트 요청
+http PATCH http://localhost:8083/bicycles/1 ticketId=1 usingTime=60 bicycleStatus="Rented"   #Success
+
+# 티켓 / 자전거 상태 확인
+http GET http://localhost:8081/tickets/1    # 메시지 서비스와 상관없이 정상 확인
+http GET http://localhost:8081/bicycles/1
+```
+
 *****
 # 운영
 
