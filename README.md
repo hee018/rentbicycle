@@ -237,7 +237,52 @@ public interface PaymentService {
         }
     }
 ```
+## DDD 의 적용
+- 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다 (예시는 ticket 마이크로 서비스)
+```
 
+@Entity
+@Table(name="Ticket_table")
+public class Ticket {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long ticketId;
+    private String ticketStatus;
+    private String ticketType;
+    private String buyerPhoneNum;
+
+    public Long getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(Long ticketId) {
+        this.ticketId = ticketId;
+    }
+    public String getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(String ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+    public String getTicketType() {
+        return ticketType;
+    }
+
+    public void setTicketType(String ticketType) {
+        this.ticketType = ticketType;
+    }
+    public String getBuyerPhoneNum() {
+        return buyerPhoneNum;
+    }
+
+    public void setBuyerPhoneNum(String buyerPhoneNum) {
+        this.buyerPhoneNum = buyerPhoneNum;
+    }
+}
+
+```
 *****
 # 운영
 
