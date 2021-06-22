@@ -166,7 +166,8 @@ http://www.msaez.io/#/storming/XPdLMjnOsOeUkU6QKEL93BKtOZw2/share/364ee9e4f63281
 
 ### 헥사고날 아키텍처 다이어그램 도출
 
-그림
+![image](https://user-images.githubusercontent.com/84304021/122846201-4ee61000-d340-11eb-88a8-4f09c439b1b8.png)
+
 
 *****
 # 구현
