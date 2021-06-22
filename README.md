@@ -237,6 +237,12 @@ public interface PaymentService {
         }
     }
 ```
+
+- 동기식 호출에서는 호출 시간에 따른 타임 커플링이 발생하며, 결제 시스템이 장애가 나면 주문도 못받는다는 것을 확인
+Payment 서비스 다운 후 티켓 구매
+![티켓 구매 실패](https://user-images.githubusercontent.com/83382676/122861409-5dd9bc00-d35a-11eb-90de-f4debebb4354.png)
+
+
 ## DDD 의 적용
 - 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다 (예시는 ticket 마이크로 서비스)
 ```
