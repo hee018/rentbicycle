@@ -306,7 +306,20 @@ http PATCH http://localhost:8083/bicycles/1 ticketId=1 usingTime=60
 4. 티켓 상태 확인(ticketStatus가 ticketUsed로 변경되었는지 확인)
 http GET http://localhost:8081/tickets/1
 ```
+## Correlation
 
+- PolicyHandler에서 처리 시 어떤 건에 대한 처리인지를 구별하기 위한 Correlation-key 구현을 이벤트 클래스 안의 변수로 전달받아 서비스간 연관 처리를 구현 (티켓 생성 시 구매, 자전거 렌탈시 티켓상태 변경, 환불 시 티켓 상태 변경 등)
+
+- 티켓구매
+
+- 자전거등록
+
+- 자전거렌탈
+
+- 티켓2 구매
+
+- 티켓환불
+- 
 *****
 # 운영
 
