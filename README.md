@@ -240,6 +240,7 @@ public interface PaymentService {
 ## DDD 의 적용
 - 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다 (예시는 ticket 마이크로 서비스)
 ```
+# Ticket.java
 
 @Entity
 @Table(name="Ticket_table")
@@ -283,6 +284,16 @@ public class Ticket {
 }
 
 ```
+- Entity Pattern 과 Repository Pattern 을 적용하여 JPA 를 통하여 별도 처리 없이 데이터 접근 어댑터를 자동 생성하기 위하여 Spring Data REST 의 RestRepository 를 적용하였다
+```
+# TicketRepository.java
+
+@RepositoryRestResource(collectionResourceRel="tickets", path="tickets")
+public interface TicketRepository extends PagingAndSortingRepository<Ticket, Long>{
+}
+```
+
+
 *****
 # 운영
 
