@@ -366,3 +366,6 @@ codebuild 프로젝트 및 빌드 이력
 - Hystrix 설정: thread에서 600 밀리가 넘어서 유지되면 CB 회로가 닫히도록 (요청을 빠르게 실패처리, 차단) 설정
 ![image](https://user-images.githubusercontent.com/61194075/122858111-b017de80-d354-11eb-88bd-2c8249d7d7c2.png)
 
+- 피호출 서비스 부하처리 : Payment.java
+![image](https://user-images.githubusercontent.com/61194075/122860035-f28eea80-d357-11eb-8f2f-f1a8f8c850a6.png)
+
