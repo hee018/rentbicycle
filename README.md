@@ -427,8 +427,10 @@ codebuild 프로젝트 및 빌드 이력
 ![autoscale](https://user-images.githubusercontent.com/61194075/122864665-00e10480-d360-11eb-9250-27611377ca10.PNG)
 
 - siege 툴로 서킷브레이킹에서 했듯이 동일하게 워크로드 설정
+
 ![image](https://user-images.githubusercontent.com/61194075/122868318-c24e4880-d365-11eb-8299-e1f038b5ad08.png)
 
 - HPA 삭제
+
 ![image](https://user-images.githubusercontent.com/61194075/122868523-04778a00-d366-11eb-93af-a638a768f4a4.png)
 
