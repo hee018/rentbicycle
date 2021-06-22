@@ -418,3 +418,10 @@ codebuild 프로젝트 및 빌드 이력
   Thread.currentThread().sleep((long) (400 + Math.random() * 220));
 ![image](https://user-images.githubusercontent.com/61194075/122860035-f28eea80-d357-11eb-8f2f-f1a8f8c850a6.png)
 
+- siege 툴로 동작 확인
+  운영시스템이 비정상종료 없이 적절히 열리고 닫힘으로써 자원 보존 확인
+![image](https://user-images.githubusercontent.com/61194075/122864402-8ca66100-d35f-11eb-9041-1c77bd576e14.png)
+
+## 오토스케일아웃
+- replica 를 동적으로 늘려주도록 HPA 를 설정
+![autoscale](https://user-images.githubusercontent.com/61194075/122864665-00e10480-d360-11eb-9250-27611377ca10.PNG)
