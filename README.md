@@ -311,15 +311,20 @@ http GET http://localhost:8081/tickets/1
 - PolicyHandler에서 처리 시 어떤 건에 대한 처리인지를 구별하기 위한 Correlation-key 구현을 이벤트 클래스 안의 변수로 전달받아 서비스간 연관 처리를 구현 (티켓 생성 시 구매, 자전거 렌탈시 티켓상태 변경, 환불 시 티켓 상태 변경 등)
 
 - 티켓구매
+![티켓구매](https://user-images.githubusercontent.com/83382676/122860539-db9cc800-d358-11eb-80f6-6f66ce95727c.png)
 
 - 자전거등록
+![자전거등록](https://user-images.githubusercontent.com/83382676/122860568-ebb4a780-d358-11eb-8f33-01a86662573d.png)
 
 - 자전거렌탈
+![자전거렌탈](https://user-images.githubusercontent.com/83382676/122860573-ef482e80-d358-11eb-9a31-34c58fdf04df.png)
 
-- 티켓2 구매
+- 티켓 2구매
+![티켓 2구매](https://user-images.githubusercontent.com/83382676/122860579-f1aa8880-d358-11eb-9521-5c87f1c3a311.png)
 
 - 티켓환불
-- 
+![티켓환불](https://user-images.githubusercontent.com/83382676/122860601-f8390000-d358-11eb-8929-c5c65cd2b31c.png)
+
 *****
 # 운영
 
