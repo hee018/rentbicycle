@@ -16,9 +16,6 @@ import org.springframework.util.MimeTypeUtils;
 @Table(name="Payment_table")
 public class Payment {
 
-/*  Entity 의 lifecycle에 해당하는 listener  
-    > @PostPersist (저장후) @PrePersist(저장전) @PostUpdate (업데이트후) 
-*/
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long paymentId;
@@ -36,7 +33,6 @@ public class Payment {
         paymentApproved.setPaymentId(this.getPaymentId());
         paymentApproved.setPaymentId(this.getTicketId());
         paymentApproved.setTicketAmt(this.getTicketAmt());
-        // paymentApproved.setAddPaymentYn(this.getAddPaymentYn());
         paymentApproved.setPaymentStatus("paymentApproved");
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -111,13 +107,6 @@ public class Payment {
     public void setTicketAmt(Long ticketAmt) {
         this.ticketAmt = ticketAmt;
     }
-    // public Boolean getAddPaymentYn() {
-    //     return addPaymentYn;
-    // }
-
-    // public void setAddPaymentYn(Boolean addPaymentYn) {
-    //     this.addPaymentYn = addPaymentYn;
-    // }
     public String getPaymentStatus() {
         return paymentStatus;
     }
@@ -125,8 +114,6 @@ public class Payment {
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
-
-
 
 
 }
