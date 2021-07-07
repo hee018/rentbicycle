@@ -84,27 +84,6 @@
 
 # 분석/설계
 
-## AS-IS 조직 (Horizontally-Aligned)
-
-## TO-BE 조직 (Vertically-Aligned)
-
-## Event Storming 결과
-
-### 이벤트 도출
-
-### 부적격 이벤트 탈락
-
-### 액터, 커맨드 부착하여 읽기 좋게
-
-### 어그리게잇으로 묶기
-
-### 바운디드 컨텍스트로 묶기
-
-### 폴리시 부착 
-- 괄호는 수행주체, 폴리시 부착을 둘째단계에서 해놔도 상관 없음. 전체 연계가 초기에 드러남
-
-### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
-
 ## 
 ![image](https://user-images.githubusercontent.com/84304021/122719255-e9931000-d2a8-11eb-96b2-db0fc0083a53.png)
 
